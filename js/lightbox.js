@@ -1,3 +1,12 @@
+/**
+ * Lightbox.js - A simple image gallery lightbox
+ * This script adds a lightbox feature to an image gallery.
+ * When a thumbnail is clicked, the lightbox opens, displaying
+ * the full-size image with a caption. Users can navigate through
+ * images using the prev and next buttons, and close the lightbox
+ * when finished.
+ */
+
 let thumbnails = document.getElementsByClassName('thumbnail');
 let lightbox = document.getElementById('lightbox');
 let lightboxContent = document.getElementsByClassName('lightbox-content')[0];
@@ -6,6 +15,11 @@ let close = document.getElementsByClassName('close')[0];
 let prev = document.getElementsByClassName('prev')[0];
 let next = document.getElementsByClassName('next')[0];
 
+/**
+ * Shows the lightbox with the specified image and caption.
+ * @param {string} imageSrc - The source URL of the image to display.
+ * @param {string} imageAlt - The alt text of the image to display as the caption.
+ */
 function showLightbox(imageSrc, imageAlt) {
     lightbox.classList.remove('lightbox-hidden');
     lightboxContent.src = imageSrc;
@@ -18,10 +32,16 @@ for (let i = 0; i < thumbnails.length; i++) {
     })
 }
 
+/**
+ * Hides the lightbox.
+ */
 function hideLightbox() {
     lightbox.classList.add('lightbox-hidden');
 }
 
+/**
+ * Shows the next image in the gallery.
+ */
 function showNextImage() {
     for (let i = 0; i < thumbnails.length; i++) {
         if (thumbnails[i].src === lightboxContent.src) {
@@ -35,6 +55,9 @@ function showNextImage() {
     }
 }
 
+/**
+ * Shows the previous image in the gallery.
+ */
 function showPrevImage() {
     for (let i = 0; i < thumbnails.length; i++) {
         if (thumbnails[i].src === lightboxContent.src) {
