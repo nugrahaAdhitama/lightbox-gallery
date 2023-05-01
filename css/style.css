@@ -22,18 +22,20 @@ body {
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .thumbnail {
-    width: 100%;
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    height: 200px;
+    object-fit: cover;
 }
 
 .thumbnail:hover {
